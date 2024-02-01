@@ -57,7 +57,7 @@
     `pip install -r \путь\к\папке\requirements.txt`.
 
 Далее запускаем сам проект путем вызова python3 и указанием главного файла main.py:
-`python3 \путь\к\папке\main.py`.
+`python3 Yandex-Project/main.py`.
 
 ## Разработчики:
 
