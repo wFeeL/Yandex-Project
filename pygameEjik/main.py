@@ -8,7 +8,6 @@ from pygame.locals import *
 
 from PyQt5.QtGui import QIcon
 
-
 pygame.init()
 pygame.mixer.pre_init()
 
@@ -208,11 +207,11 @@ def end_screen(inp):
     # выключаем фоновую музыку
     pygame.mixer.music.stop()
     # запускаем конечную музыку
-    pygame.mixer.music.load("data/st_end_music.wav")
+    pygame.mixer.music.load("pygameEjik/data/st_end_music.wav")
     pygame.mixer.music.play(-1, 0.0, 20000)
 
     # соединяемся с базой данных
-    connection = sqlite3.connect("data/Ejik_DataBase.sqlite")
+    connection = sqlite3.connect("pygameEjik/data/Ejik_DataBase.sqlite")
     cur = connection.cursor()
     # вносим изменения в базу данных
     cur.execute("""INSERT INTO records(user, ochki) VALUES (?, ?)""", (inp, apple_count))
@@ -232,9 +231,9 @@ def end_screen(inp):
 
     if len(spis) == 3:
         intro_text += ["Вот лучшие игроки:",
-                  f"{spis[0][0]}, {spis[0][1]}",
-                  f"{spis[1][0]}, {spis[1][1]}",
-                  f"{spis[2][0]}, {spis[2][1]}"
+                       f"{spis[0][0]}, {spis[0][1]}",
+                       f"{spis[1][0]}, {spis[1][1]}",
+                       f"{spis[2][0]}, {spis[2][1]}"
                        ]
     else:
         intro_text += ['К сожалению, эту игру запустило только небольшое',
